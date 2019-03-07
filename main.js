@@ -2,6 +2,7 @@ var input = document.getElementById("userinput");
 var btn= document.getElementById("addbtn");
 var list=document.querySelector("ul");
 var item=document.getElementsByClassName("li");
+var indexVar=1;
 //var testVar=document.getElementById("testp");
 
 function lengthInput(){
@@ -27,11 +28,11 @@ function addElementToList(){
 	//testVar.innerHTML="element good";
 	var newItem = document.createElement("li");
 	newItem.className="list-group-item";
-	var itemInfo = document.createTextNode(input.value);
+	var itemInfo = document.createTextNode(indexVar+". "+input.value);
 	newItem.appendChild(itemInfo);
 	list.appendChild(newItem);
 	input.value="";
-	
+	indexVar++;
 	var deleteB = document.createElement("button");
 	deleteB.className="btn btn-primary cancel-btn";
 	deleteB.innerHTML="X";
@@ -41,6 +42,7 @@ function addElementToList(){
 	deleteB.addEventListener("click", deleteElement);
 	function deleteElement(){
 		list.removeChild(newItem);
+		indexVar--;
 	}
 	
 	
