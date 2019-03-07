@@ -12,7 +12,7 @@ function lengthInput(){
 function addListClick(){
 	//testVar.innerHTML=input.value.length;
 
-	if (input.value.length()>0){
+	if (input.value.length>0){
 		//testVar.innerHTML="click test ok";
 		addElementToList();
 	}
